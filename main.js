@@ -39,11 +39,9 @@ void (function () {
         )
 
         // make the same speed for each comment list
-        document.on("DOMContentLoaded", function () {
-            commentDesktopContainers.forEach(container => {
-                const animation = initAnimationSpeed(container)
-                container.classList.add(animation)
-            })
+        commentDesktopContainers.forEach(container => {
+            const animation = initAnimationSpeed(container)
+            container.classList.add(animation)
         })
 
         function initAnimationSpeed(el, s = speed) {
