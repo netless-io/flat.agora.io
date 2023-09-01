@@ -147,8 +147,13 @@ p {
     border-radius: 20px;
 }
 
+.images {
+    flex-shrink: 0;
+    width: 50%;
+}
+
 .images img {
-    height: 300px;
+    width: 100%;
 }
 
 .items .item {
@@ -475,7 +480,7 @@ p {
 }
 @media (min-width: 70em) {
     .navheader {
-        padding: 1em 240px
+        padding: 1em calc(32vw / 2);
     }
 }
 
