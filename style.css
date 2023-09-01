@@ -311,6 +311,10 @@ p {
         margin-top: calc(-60px + 30px);
     }
 
+    .images {
+        width: 100%;
+    }
+
     .func-desc {
         flex-flow: column nowrap;
         text-align: center;
