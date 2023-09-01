@@ -76,7 +76,7 @@ p {
 .ml1 { margin-left: .5em }
 .pa0 { padding: 0 }
 .pa2 { padding: 1em }
-.pa3 { padding: 1.875em; }
+.pa3 { padding: 1.875em; padding-left: 0; padding-right: 0 }
 .pl2 { padding-left: 1em }
 .list-none { list-style-type: none }
 .f1 { font-size: .75em }
@@ -84,7 +84,7 @@ p {
 .f3 { font-size: 1.5em }
 .center { text-align: center }
 .title { font-size: 2.5em; line-height: 1.15; }
-.subtitle { margin-top: 0.625em; color: var(--gray-color, #586376); line-height: 1.2; }
+.subtitle { margin-top: 0.625em; color: var(--gray-color, #586376); line-height: 1.5; }
 .grid-2c { display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 1em; }
 .grid-3c { display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 1em; }
 .disabled { display: none; }
@@ -94,21 +94,27 @@ p {
 .navheader {
     position: sticky;
     top: 0; left: 0; right: 0;
-    padding: 1em 140px;
+    padding: .625em 140px;
     z-index: 2;
     background-color: white;
     transition: box-shadow 0.3s ease-in-out;
+    color: var(--gray-color, #586376);
+}
+
+.navheader select {
+    color: var(--gray-color, #586376);
 }
 
 .navheader.with-shadow {
-    box-shadow: 0px 20px 40px 0px #00000040;
+    box-shadow: 0px 20px 40px 0px #00000040,
+                0px 4px 10px 0px #00000040;
 }
 
 .hero {
     height: 480px;
     padding: 120px 0 204px 0;
     box-sizing: border-box;
-    background: linear-gradient(360deg, var(--light-blue-2, #e8faff) 0%, var(--light-blue-3, #bbedff) 100%);
+    background: linear-gradient(180deg, var(--light-blue-2, #e8faff) 0%, var(--light-blue-3, #bbedff) 100%);
 }
 
 .cover {
@@ -118,9 +124,10 @@ p {
 }
 
 .try-btn {
-    padding: 0.563em 1.25em;
+    padding: 0.75em 1.25em;
     color: white;
     background: var(--primary-color, #099dfd);
+    border: 1px solid var(--primary-color, #099dfd);
     transition: background-color .3s;
     border-radius: 4px;
 }
@@ -131,7 +138,7 @@ p {
 }
 
 .download-btn {
-    padding: 0.563em 1.25em;
+    padding: 0.75em 1.25em;
     color: var(--primary-color, #099dfd);
     border: 1px solid var(--primary-color, #099dfd);
     border-radius: 4px;
@@ -140,6 +147,13 @@ p {
 .download-btn:hover {
     opacity: .8;
     transition: opacity .3s ease-in-out;
+}
+
+.navheader .try-btn,
+.navheader .download-btn
+ {
+    font-size: .875em;
+    padding: 0.563em 1.25em;
 }
 
 .carousel .carousel-keys {
@@ -184,7 +198,7 @@ p {
     z-index: -1;
     display: inline-block;
     vertical-align: top;
-    width: calc((100% - 20px) / 2 - 10px);
+    width: calc((100% - 10px) / 2);
     animation: scroll 10s linear infinite normal;
 }
 
@@ -198,7 +212,7 @@ p {
 }
 
 .scroll-content:nth-child(2) {
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 .scroll .scroll-content div {
@@ -208,7 +222,7 @@ p {
 }
 
 .scroll .scroll-content div + div {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .scroll .scroll-content div:nth-child(odd) {
@@ -249,11 +263,18 @@ p {
 
 .download-list > a img {
     border-radius: 50%;
+}
+
+.download-list > a .icon-container {
+    position: relative;
+    font-size: 0;
+    border-radius: 50%;
     transition: box-shadow .7s ease-in-out;
 }
 
-.download-list > a img:hover {
-    box-shadow: 0px 20px 40px 0px #00000040;
+.download-list > a .icon-container:hover {
+    box-shadow: 0px 20px 40px 0px #00000040,
+                0px 4px 10px 0px #00000040;
 }
 
 .download-list > a span,
@@ -309,7 +330,7 @@ p {
     }
 
     .cover {
-        margin-top: calc(-60px + 30px);
+        margin-top: -45px;
     }
 
     .images {
@@ -365,7 +386,7 @@ p {
         flex-flow: column nowrap;
     }
 
-    .download-list > a img {
+    .download-list > a .icon-container {
         margin-bottom: 10px;
     }
 
@@ -427,7 +448,7 @@ p {
 
     .cover {
         display: inline-block;
-        margin-top: calc(-204px + 30px);
+        margin-top: -158px;
         transition: transform 0.1s ease-in-out;
         will-change: transform;
         cursor: pointer;
@@ -437,8 +458,28 @@ p {
         margin-top: 0;
     }
 
-    .download-list > a img {
+    .download-list > a .icon-container {
         margin-bottom: 20px;
+    }
+
+    .download-list #mac-download .icon-container::after {
+        content: "";
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-image: url('./image/download.svg');
+        width: 64px;
+        height: 64px;
+        background-color: #fff;
+        background-size: cover;
+        z-index: 1;
+        transition: opacity .7s ease-in-out;
+    }
+
+    .download-list #mac-download .icon-container:hover::after {
+        opacity: 1;
     }
 
     #download-modal.active {
@@ -485,7 +526,7 @@ p {
 }
 @media (min-width: 70em) {
     .navheader {
-        padding: 1em calc(32vw / 2);
+        padding: .625em calc(32vw / 2);
     }
 }
 
