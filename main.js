@@ -70,7 +70,7 @@ void (function () {
     }
 
     function initTabSwitch() {
-        const { interval } = $CONFIG.tab
+        const { intervals } = $CONFIG.tab
         const timer = []
         for (let i = 0; i < 3; i++) {
             const tabs = $$(`.carousel-${i + 1} .items .item`).filter(
@@ -92,7 +92,7 @@ void (function () {
                     const index = tabs.indexOf(activeTab)
                     const nextIndex = (index + 1) % tabs.length
                     updateTab(tabs[nextIndex])
-                }, interval),
+                }, intervals[i]),
             )
         }
 
@@ -270,7 +270,7 @@ void (function () {
                 queryBodyCls: ".modal-wrap-mobile.lang",
             },
             tab: {
-                interval: 3000,
+                intervals: [4000, 5000, 6000]
             },
             download: {
                 macId: "#mac-download",

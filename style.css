@@ -60,6 +60,8 @@ p {
 
 .flex { display: flex; }
 
+.flex-align-center { align-items: center; }
+
 .inline-flex {
     display: inline-flex;
     align-items: center;
@@ -143,6 +145,15 @@ p {
     padding: 2em;
     background-color: var(--light-blue-2, #e8faff);
     border-radius: 20px;
+}
+
+.images {
+    flex-shrink: 0;
+    width: 50%;
+}
+
+.images img {
+    width: 100%;
 }
 
 .items .item {
@@ -266,7 +277,7 @@ p {
 }
 
 /*===========================================================================*/
-@media (max-width: 59em) { /* mobile */
+@media (max-width: 59.999em) { /* mobile */
     section {
         width: 100%;
     }
@@ -362,9 +373,12 @@ p {
         grid-column: span 2;
     }
     
-    .school-list img:nth-child(7),
+    .school-list img:nth-child(7) {
+        grid-column: 2 / span 2;
+    }
+
     .school-list img:nth-child(8) {
-        grid-column: span 3;
+        grid-column: 4 / span 2;
     }
 
     .modal-mask-mobile {
@@ -466,7 +480,7 @@ p {
 }
 @media (min-width: 70em) {
     .navheader {
-        padding: 1em 240px
+        padding: 1em calc(32vw / 2);
     }
 }
 
