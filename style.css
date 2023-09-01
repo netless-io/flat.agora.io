@@ -61,6 +61,7 @@ p {
 .flex { display: flex; }
 
 .flex-align-center { align-items: center; }
+.flex-justify-center { justify-content: center; }
 
 .inline-flex {
     display: inline-flex;
@@ -309,6 +310,10 @@ p {
 
     .cover {
         margin-top: calc(-60px + 30px);
+    }
+
+    .images {
+        width: 100%;
     }
 
     .func-desc {

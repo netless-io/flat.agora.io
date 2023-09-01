@@ -1,5 +1,5 @@
 export function getCurrentLanguage() {
-    return location.pathname.split("/").filter(Boolean)[0] || "zh-CN"
+    return location.pathname.split("/").filter(Boolean)[0] || "en"
 }
 
 export function isChinese() {
