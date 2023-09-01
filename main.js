@@ -258,12 +258,12 @@ void (function () {
                 mobileTargetId: "#lang-mobile",
                 langKey: "flat:language",
                 langHref: {
-                    "zh-CN": "/",
-                    "en": "/en/",
+                    "zh-CN": "/zh/",
+                    "en": "/",
                 },
                 options: [
-                    { key: "zh-CN", name: "简体中文" },
                     { key: "en", name: "English" },
+                    { key: "zh-CN", name: "简体中文" },
                 ],
                 modalId: "#lang-modal",
                 bodyCls: "lang",
@@ -294,7 +294,7 @@ void (function () {
         initTabSwitch() // set carousel item event
         initMacDownloadModal() // set mac download modal
         initFolding() // set folding
-        setLanguageSwitch() // set language
+        // setLanguageSwitch() // set language
         setCoverAnimation() // set header cover press effect
 
         // set header shadow on scroll

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J5NHVLY7TP"></script>
@@ -12,37 +12,37 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Better Teaching for freelancers. A simple and refreshing online teaching tool focusing on interactive in-class experience. Try for free and download Agora Flat for multiple platforms.">
-    <title>Flat Online Classroom</title>
+    <meta name="description" content="给个人老师使用的在线授课工具。 我们努力克制，希望 Flat 是一个简单、清爽、专注课中互动体验的在线授课工具">
+    <title>Flat 在线教室</title>
     <script>
-        if (!localStorage.getItem("flat:language") && navigator.language === "zh-CN") {
-            window.location.href = "/";
+        if (!localStorage.getItem("flat:language") && navigator.language !== "zh-CN") {
+            window.location.href = "../";
         }
     </script>
-    <link rel="shortcut icon" href="../favicon_en.ico">
+    <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <header class="navheader flex pa2">
-        <img src="../image/flat-icon_en.svg" alt="Agora Flat logo">
+        <img src="../image/flat-icon.svg" alt="Agora Flat logo">
         <div class="flex-1"></div>
         <nav class="flex">
             <ul class="mobile-disabled inline-flex list-none ma0 pa0">
-                <li class="pl2"><a href="https://github.com/netless-io/flat/issues" target="_blank">Feedback</a></li>
+                <li class="pl2 mobile-disabled"><a href="https://github.com/netless-io/flat/issues" target="_blank">问题反馈</a></li>
                 <li class="pl2">
                     <label for="lang">🌐</label>
                     <select id="lang">
-                        <option>English</option>
+                        <option>简体中文</option>
                     </select>
                 </li>
-                <li class="pl2">
+                <li class="pl2 mobile-disabled">
                     <a href="https://flat-web.whiteboard.agora.io/" target="_blank" class="try-btn inline-flex">
-                        <span>Try for free</span>
+                        <span>立即体验 Web 版</span>
                     </a>
                 </li>
-                <li class="pl2">
+                <li class="pl2 mobile-disabled">
                     <a href="#download" class="download-btn inline-flex ml1">
-                        Download
+                        下载客户端
                     </a>
                 </li>
             </ul>
@@ -59,14 +59,14 @@
     <main>
         <header>
             <div class="hero">
-                <p class="center title">Better Teaching for freelances</p>
-                <p class="center f2 subtitle">Simple, refreshing online teaching tool that focuses on the in-class interactive experience</p>
+                <p class="center title">给个人老师使用的在线授课工具</p>
+                <p class="center f2 subtitle">我们努力克制，希望 Flat 是一个简单、清爽、专注课中互动体验的在线授课工具</p>
                 <div class="center mt4">
                     <a href="https://flat-web.whiteboard.agora.io/" target="_blank" class="try-btn inline-flex">
-                        <span>Try for free</span>
+                        <span>立即体验 Web 版</span>
                     </a>
                     <a href="#download" class="download-btn inline-flex ml1">
-                        Download
+                        下载客户端
                     </a>
                 </div>
             </div>
@@ -80,18 +80,18 @@
         <section class="func-desc flex pa3">
             <div class="pa2 flex-1">
                 <img src="../image/share.svg" alt="share">
-                <p class="f3 mt3">Share While Boarding</p>
-                <p class="subtitle">For online teaching scenarios where you are sharing while boar</p>
+                <p class="f3 mt3">边板书，边分享</p>
+                <p class="subtitle">设计围绕白板为中心，更适合边板书、边分享的在线授课场景</p>
             </div>
             <div class="pa2 flex-1">
                 <img src="../image/extensive.svg" alt="extensive">
-                <p class="f3 mt3">Extensive Courseware</p>
-                <p class="subtitle">Synchronized sharing of courseware and animations</p>
+                <p class="f3 mt3">丰富的课件资源</p>
+                <p class="subtitle">支持同步分享丰富的课件和动画 PowerPoint、PDF、MP4、MP3、Word</p>
             </div>
             <div class="pa2 flex-1">
                 <img src="../image/interaction.svg" alt="interaction">
-                <p class="f3 mt3">Windows Interactions</p>
-                <p class="subtitle">Windowed interaction, Support for switching on display</p>
+                <p class="f3 mt3">Windows 交互延续</p>
+                <p class="subtitle">窗口化交互，灵活支持各种材料之间的切换展示</p>
             </div>
         </section>
 
@@ -103,29 +103,29 @@
                 <img class="disabled" src="../image/carousel-1-record.webp" alt="record&replace">
             </div>
             <div class="carousel-keys pa2">
-                <p class="subtitle">A professional online teaching tool</p>
-                <p class="f3 mt1">Designed with the whiteboard in mind, suitable for involve sharing while boarding</p>
+                <p class="subtitle">专业的在线教学工具</p>
+                <p class="f3 mt1">以白板为中心进行设计，适合边板书、边分享的在线教学场景</p>
                 <div class="items grid-2c mt4">
-                    <span class="item active">Interactive whiteboard</span>
-                    <span class="item">HD audio and video</span>
-                    <span class="item">Courseware sharing</span>
-                    <span class="item">Record & Replay</span>
+                    <span class="item active">双向互动白板</span>
+                    <span class="item">高清音视频通话</span>
+                    <span class="item">课件分享</span>
+                    <span class="item">录制回放</span>
                 </div>
             </div>
         </section>
 
         <section class="carousel carousel-2 flex pa3">
             <div class="carousel-keys pa2">
-                <p class="subtitle">Improve teacher teaching efficiency</p>
-                <p class="f3 mt1">While meeting teaching needs, it can easily adapt to changes from offline to online</p>
+                <p class="subtitle">提高老师教学效率</p>
+                <p class="f3 mt1">满足教学需求的同时，可以轻松适应从线下到线上的变化</p>
                 <div class="items grid-3c mt4">
-                    <span class="item active">Book a class</span>
-                    <span class="item">Upload file</span>
-                    <span class="item">Q&A</span>
-                    <span class="item">Issue rewards</span>
-                    <span class="item">Authority manage</span>
-                    <span class="item text-disabled" title="coming soon">Homework</span>
-                    <span class="item text-disabled" title="coming soon">Data export</span>
+                    <span class="item active">预定课程</span>
+                    <span class="item">上传课件</span>
+                    <span class="item">课堂问答</span>
+                    <span class="item">发放奖励</span>
+                    <span class="item">权限管理</span>
+                    <span class="item text-disabled" title="coming soon">布置作业</span>
+                    <span class="item text-disabled" title="coming soon">数据导出</span>
                 </div>
             </div>
             <div class="images flex flex-align-center">
@@ -146,14 +146,14 @@
                 <img class="disabled" src="../image/carousel-3-img.webp" alt="upload images">
             </div>
             <div class="carousel-keys pa2">
-                <p class="subtitle">Stimulate students' interest in learning</p>
-                <p class="f3 mt1">Improve learning concentration and participate in classroom interaction</p>
+                <p class="subtitle">激发学生学习兴趣</p>
+                <p class="f3 mt1">寓教于乐，有效提升学习专注力，积极参与课堂互动</p>
                 <div class="items grid-2c mt4">
-                    <span class="item active">Raise hand to speak</span>
-                    <span class="item">Doodle</span>
-                    <span class="item">Group Chat</span>
-                    <span class="item">View Replay</span>
-                    <span class="item">Upload Images</span>
+                    <span class="item active">举手连麦</span>
+                    <span class="item">白板涂鸦</span>
+                    <span class="item">群组聊天</span>
+                    <span class="item">查看回放</span>
+                    <span class="item">上传图片</span>
                 </div>
             </div>
         </section>
@@ -161,32 +161,32 @@
         <section class="func-desc flex pa3">
             <div class="pa2 flex-1">
                 <img src="../image/plugin.svg" alt="plugin">
-                <p class="f3 mt3">Scenario Plugin</p>
-                <p class="subtitle">Support common classroom plug-ins: YouTube, Google Docs, GeoGebra, Code Editor, Cut down</p>
+                <p class="f3 mt3">场景化插件</p>
+                <p class="subtitle">支持多种常用课堂插件：YouTube、Google Docs、GeoGebra、Code Editer、Cut down</p>
             </div>
             <div class="pa2 flex-1">
                 <img src="../image/phone.svg" alt="phone">
-                <p class="f3 mt3">Mobile First</p>
-                <p class="subtitle">Support iOS, Android, iPadOS, macOS, Windows versions, not limited by devices</p>
+                <p class="f3 mt3">移动优先设计理念</p>
+                <p class="subtitle">支持 iOS、Android、iPadOS、macOS、Windows 版本，不受设备的限制</p>
             </div>
             <div class="pa2 flex-1">
                 <img src="../image/opensource.svg" alt="opensource">
-                <p class="f3 mt3">Open Source</p>
-                <p class="subtitle">Based on open source code, complete development quickly</p>
+                <p class="f3 mt3">前后端完全开源</p>
+                <p class="subtitle">基于开源代码，快速完成开发，从而使应用能够以最佳的 RTE 用户体验迅速进入市场</p>
             </div>
         </section>
 
         <section class="pa3">
-            <p class="center f3 mt3">Agora Flat has gained the trust of 1000+ individual teachers and school institutions</p>
+            <p class="center f3 mt3">Agora Flat 收获了 1000+ 个人老师和学校机构的信赖和选择</p>
             <div class="school-list pa3">
-                <img src="../image/school1.svg" alt="Guangxi University of Finance and Economics">
-                <img src="../image/school2.svg" alt="Xiamen University of Technology">
-                <img src="../image/school3.svg" alt="Chengdu Technological University">
-                <img src="../image/school4.svg" alt="Jiangsu University">
-                <img src="../image/school5.svg" alt="Huazhong University of Science and Technology">
-                <img src="../image/school6.svg" alt="Nanjing Foreign Language School Xianlin Campus">
-                <img src="../image/school7.svg" alt="The Open University of BingTuan">
-                <img src="../image/school8.svg" alt="No.1 Middle School of Linyi shandong">
+                <img src="../image/school1.svg" alt="广西财经学院">
+                <img src="../image/school2.svg" alt="厦门科技大学">
+                <img src="../image/school3.svg" alt="成都工业学院">
+                <img src="../image/school4.svg" alt="江苏大学">
+                <img src="../image/school5.svg" alt="华中科技大学">
+                <img src="../image/school6.svg" alt="南京外国语学校仙林校区">
+                <img src="../image/school7.svg" alt="兵团开放大学">
+                <img src="../image/school8.svg" alt="山东临沂第一中学">
             </div>
             <div class="scroll mt4">
                 <div class="scroll-content desktop mobile-disabled"></div>
@@ -196,8 +196,8 @@
         </section>
 
         <section class="pa3" id="download">
-            <p class="center f3">Download</p>
-            <p class="center subtitle">Simultaneously supports iOS, Android, iPadOS, macOS, Windows versions, not limited by devices</p>
+            <p class="center f3">下载 Agora Flat 客户端</p>
+            <p class="center subtitle">同时支持 iOS、Android、iPadOS、macOS、Windows 版本，不受设备的限制</p>
 
             <div class="download-list mt4">
                 <a class="mobile-disabled" href="https://flat-storage.oss-accelerate.aliyuncs.com/versions/latest/stable/win/Flat-x64-2.2.4.exe">
@@ -225,10 +225,10 @@
     </main>
     <footer class="copyright mt4 pa2">
         <div class="center">
-            <a href="./privacy.html">Privacy Policy</a>&nbsp;&nbsp;
-            <a href="./service.html">Service Agreement</a>&nbsp;
+            <a href="./privacy.html">隐私政策</a>&nbsp;&nbsp;
+            <a href="./service.html">服务协议</a>&nbsp;
         </div>
-        <div class="center mt1">Copyright © 2023 Flat. All Rights Reserved</div>
+        <div class="center mt1">沪ICP备14053584号 沪公网安备 31011002002951 上海兆言网络有限公司</div>
     </footer>
 
     <div id="download-modal" class="disabled">
@@ -238,22 +238,22 @@
                 <img class="modal-close-btn" src="../image/close.svg" alt="close modal">
             </div>
             <div class="modal-body">
-                <p class="f3">Download the suitable Agora Flat version for your Mac</p>
+                <p class="f3">下载更适合你 Mac 的 Agora Flat 版本</p>
 
                 <div class="pa3">
                     <a href="https://flat-storage.oss-accelerate.aliyuncs.com/versions/latest/stable/mac/Flat-arm64-2.2.4.dmg" target="_blank" class="try-btn inline-flex">
-                        Download Apple Silicon
+                        下载 Apple 芯片版
                     </a>
     
                     <a href="https://flat-storage.oss-accelerate.aliyuncs.com/versions/latest/stable/mac/Flat-x64-2.2.4.dmg" class="download-btn inline-flex ml1">
-                        Download Intel Chip
+                        下载 Intel 芯片版
                     </a>
                 </div>
             </div>
             <div class="modal-footer mt4">
                 <ul>
-                    <li>Click the Apple menu at the top left, then choose "About This Mac"</li>
-                    <li>chip type ("Apple" or "Intel") and choose correct version for download</li>
+                    <li>点击左上角苹果菜单，点击「关于本机」</li>
+                    <li>查看芯片类型是「Intel」还是「Apple」，并选择对应版本下载</li>
                 </ul> 
             </div>
         </div>
