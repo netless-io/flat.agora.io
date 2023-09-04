@@ -49,7 +49,7 @@ export function macDownloadBody() {
             <div class="modal-footer mt4">
                 <ul>
                     <li>Click the Apple menu at the top left, then choose "About This Mac"</li>
-                    <li>chip type ("Apple" or "Intel") and choose correct version for download</li>
+                    <li>Chip type ("Apple" or "Intel") and choose correct version for download</li>
                 </ul> 
             </div>`;
 }

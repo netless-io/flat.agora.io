@@ -463,10 +463,15 @@ p {
 
     .cover {
         display: inline-block;
-        margin-top: -158px;
+        margin-top: -130px;
+        margin-bottom: 1.875em;
         transition: transform 0.1s ease-in-out;
         will-change: transform;
         cursor: pointer;
+        border-radius: 6px;
+        box-shadow: 0px 20px 40px 0px #00000040,
+                    0px 4px 10px 0px #00000040;
+
     }
 
     .try-btn, .download-btn {
