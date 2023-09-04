@@ -87,7 +87,8 @@ p {
 .subtitle { margin-top: 0.625em; color: var(--gray-color, #586376); line-height: 1.5; }
 .grid-2c { display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 1em; }
 .grid-3c { display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 1em; }
-.disabled { display: none; }
+.disabled { visibility: hidden; opacity: 0;  transition: opacity .5s, visibility .5s; }
+.active { visibility: visible; opacity: 1; }
 
 /*===========================================================================*/
 
@@ -156,19 +157,31 @@ p {
     padding: 0.563em 1.25em;
 }
 
+.carousel {
+    overflow: hidden;
+}
+
 .carousel .carousel-keys {
+    max-width: 60%;
+    width: 50%;
     padding: 2em;
     background-color: var(--light-blue-2, #e8faff);
     border-radius: 20px;
+    z-index: 1;
 }
 
 .images {
-    flex-shrink: 0;
     width: 50%;
+    min-width: 40%;
 }
 
 .images img {
     width: 100%;
+    transition: opacity .3s ease;
+}
+
+.images img:not(:first-child) {
+    opacity: 0;
 }
 
 .items .item {
@@ -215,17 +228,17 @@ p {
     margin-left: 10px;
 }
 
-.scroll .scroll-content div {
+.scroll .scroll-content > div {
     padding: 1.875em;
     background-color: var(--light-blue-2, #e8faff);
     border-radius: 20px;
 }
 
-.scroll .scroll-content div + div {
+.scroll .scroll-content > div + div {
     margin-top: 10px;
 }
 
-.scroll .scroll-content div:nth-child(odd) {
+.scroll .scroll-content > div:nth-child(odd) {
     background-color: var(--light-blue-3, "#bbedff");
     border-radius: 20px;
 }
@@ -289,6 +302,8 @@ p {
 .copyright a:hover {
     color: inherit;
 }
+
+.modal-root { position: relative; z-index: 1000; }
 
 .modal-mask {
     height: 100%;
@@ -448,10 +463,15 @@ p {
 
     .cover {
         display: inline-block;
-        margin-top: -158px;
+        margin-top: -130px;
+        margin-bottom: 1.875em;
         transition: transform 0.1s ease-in-out;
         will-change: transform;
         cursor: pointer;
+        border-radius: 6px;
+        box-shadow: 0px 20px 40px 0px #00000040,
+                    0px 4px 10px 0px #00000040;
+
     }
 
     .try-btn, .download-btn {
@@ -462,7 +482,7 @@ p {
         margin-bottom: 20px;
     }
 
-    .download-list #mac-download .icon-container::after {
+    .download-list  .icon-container::after {
         content: "";
         opacity: 0;
         position: absolute;
@@ -478,12 +498,8 @@ p {
         transition: opacity .7s ease-in-out;
     }
 
-    .download-list #mac-download .icon-container:hover::after {
+    .download-list .icon-container:hover::after {
         opacity: 1;
-    }
-
-    #download-modal.active {
-        display: block;
     }
 
     .modal-wrap {
