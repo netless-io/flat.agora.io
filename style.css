@@ -228,17 +228,17 @@ p {
     margin-left: 10px;
 }
 
-.scroll .scroll-content div {
+.scroll .scroll-content > div {
     padding: 1.875em;
     background-color: var(--light-blue-2, #e8faff);
     border-radius: 20px;
 }
 
-.scroll .scroll-content div + div {
+.scroll .scroll-content > div + div {
     margin-top: 10px;
 }
 
-.scroll .scroll-content div:nth-child(odd) {
+.scroll .scroll-content > div:nth-child(odd) {
     background-color: var(--light-blue-3, "#bbedff");
     border-radius: 20px;
 }

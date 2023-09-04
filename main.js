@@ -21,7 +21,10 @@ void (function () {
         const fragment = currentComment.map(i => {
             const comment = document.createElement("div")
             comment.innerHTML = `
-                <span>${i.name}</span>
+                <div>
+                    <img src="${i.src}" alt="${i.name}" width=30 style="vertical-align: middle">
+                    <span style="vertical-align: middle">${i.name}</span>
+                </div>
                 <p class="subtitle">${i.content}</p>
             `
             return comment
