@@ -3,7 +3,8 @@ import {
     isChinese,
     getCurrentLanguage,
     generateModalItem,
-    addModal
+    addModal,
+    macDownloadBody
 } from "./utils/index.js"
 
 void (function () {
@@ -80,8 +81,9 @@ void (function () {
 
             function updateTab(activeTab) {
                 tabs.forEach((tab, i) => {
-                    const visible = tab.classList.toggle("active", tab === activeTab)
-                    imgs[i].style.display = visible ? "inline-block" : "none"
+                    tab.classList.toggle("active", tab === activeTab)
+                    imgs[i].style.opacity = tab === activeTab ? 1 : 0
+                    imgs[i].style.transform = `translateX(-${i * 100}%)`
                 })
             }
             tabs.forEach(tab => tab.on("click", updateTab.bind(null, tab)))
@@ -229,13 +231,24 @@ void (function () {
     }
 
     function initMacDownloadModal() {
-        const { macId, closeCls, modalId } = $CONFIG.download
-        const macDownloadBtn = $(macId)
-        const closeBtn = $(closeCls)
-        const modal = $(modalId)
+        const { target, closeCls, id, bodyCls, queryBodyCls } = $CONFIG.download
 
-        macDownloadBtn.on("click", () => modal.classList.add("active"))
-        closeBtn.on("click", () => modal.classList.remove("active"))
+        $(target).on("click", e => {
+            foldingCallback()
+            e.stopPropagation()
+        })
+
+        function foldingCallback() {
+            if (!$(id)) {
+                addModal({ id: id.substring(1), bodyCls }, "desktop")
+
+                const foldingModalBody = $(queryBodyCls)
+                foldingModalBody.innerHTML = macDownloadBody()
+                $(closeCls)?.on("click", foldingCallback)
+            } else {
+                document.body.removeChild($(id))
+            }
+        }
     }
 
     function main() {
@@ -273,9 +286,11 @@ void (function () {
                 intervals: [4000, 5000, 6000]
             },
             download: {
-                macId: "#mac-download",
+                id: "#download-modal",
+                target: "#mac-download",
+                bodyCls: "download",
+                queryBodyCls: ".modal-wrap.download",
                 closeCls: ".modal-close-btn",
-                modalId: "#download-modal",
             },
             cover: {
                 cls: ".cover",
