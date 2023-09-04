@@ -477,7 +477,7 @@ p {
         margin-bottom: 20px;
     }
 
-    .download-list #mac-download .icon-container::after {
+    .download-list  .icon-container::after {
         content: "";
         opacity: 0;
         position: absolute;
@@ -493,7 +493,7 @@ p {
         transition: opacity .7s ease-in-out;
     }
 
-    .download-list #mac-download .icon-container:hover::after {
+    .download-list .icon-container:hover::after {
         opacity: 1;
     }
 
