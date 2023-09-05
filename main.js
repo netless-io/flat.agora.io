@@ -254,6 +254,15 @@ void (function () {
         }
     }
 
+    function comingSoon() {
+        $$(".download-list a").forEach(a => a.on("click", (e) => {
+            if (!a.href) {
+                alert("Coming soon...")
+                e.stopPropagation()
+            }
+        }))
+    }
+
     function main() {
         const CONFIG = {
             folding: {
@@ -308,9 +317,12 @@ void (function () {
         }
         window.$CONFIG = CONFIG
 
+        // mobile will be coming soon
+        comingSoon();
+
         initComment() // set comments
         initTabSwitch() // set carousel item event
-        initMacDownloadModal() // set mac download modal
+        // initMacDownloadModal() // set mac download modal
         initFolding() // set folding
         // setLanguageSwitch() // set language
         setCoverAnimation() // set header cover press effect
