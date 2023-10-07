@@ -7,6 +7,10 @@ export function isChinese() {
 }
 
 export function macDownloadBody() {
+    const href = (arch) => `https://flat-storage-sg.oss-accelerate.aliyuncs.com/versions/latest/stable/mac/Flat-${arch}-2.3.1.dmg`
+    const m1 = href('arm64')
+    const intel = href('x64')
+
     return isChinese()
         ? ` <div class="modal-header">
                 <img class="modal-close-btn" src="../image/close.svg" alt="close modal">
@@ -15,11 +19,11 @@ export function macDownloadBody() {
                 <p class="f3">下载更适合你 Mac 的 Agora Flat 版本</p>
 
                 <div class="pa3">
-                    <a href="https://flat-storage.oss-accelerate.aliyuncs.com/versions/latest/stable/mac/Flat-arm64-2.2.4.dmg" target="_blank" class="try-btn inline-flex">
+                    <a href="${m1}" target="_blank" class="try-btn inline-flex">
                         下载 Apple 芯片版
                     </a>
 
-                    <a href="https://flat-storage.oss-accelerate.aliyuncs.com/versions/latest/stable/mac/Flat-x64-2.2.4.dmg" class="download-btn inline-flex ml1">
+                    <a href="${intel}" class="download-btn inline-flex ml1">
                         下载 Intel 芯片版
                     </a>
                 </div>
@@ -37,11 +41,11 @@ export function macDownloadBody() {
                 <p class="f3">Download the suitable Agora Flat version for your Mac</p>
 
                 <div class="pa3">
-                    <a href="https://flat-storage.oss-accelerate.aliyuncs.com/versions/latest/stable/mac/Flat-arm64-2.2.4.dmg" target="_blank" class="try-btn inline-flex">
+                    <a href="${m1}" target="_blank" class="try-btn inline-flex">
                         Download Apple Silicon
                     </a>
 
-                    <a href="https://flat-storage.oss-accelerate.aliyuncs.com/versions/latest/stable/mac/Flat-x64-2.2.4.dmg" class="download-btn inline-flex ml1">
+                    <a href="${intel}" class="download-btn inline-flex ml1">
                         Download Intel Chip
                     </a>
                 </div>
