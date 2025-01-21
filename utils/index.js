@@ -7,7 +7,7 @@ export function isChinese() {
 }
 
 export function macDownloadBody() {
-    const href = (arch) => `https://flat-storage-sg.oss-accelerate.aliyuncs.com/versions/latest/stable/mac/Flat-${arch}-2.3.5.dmg`
+    const href = (arch) => `https://flat-storage-sg.oss-accelerate.aliyuncs.com/versions/latest/stable/mac/Flat-${arch}-2.3.6.dmg`
     const m1 = href('arm64')
     const intel = href('x64')
 
