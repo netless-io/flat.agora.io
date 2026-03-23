@@ -181,7 +181,10 @@ void (function () {
                 foldingModalBody.innerHTML = ""
                 foldingModalBody.append(
                     ...Object.keys(options).map(key =>
-                        generateModalItem({ value: options[key].value }, options[key].callback),
+                        generateModalItem(
+                            { value: options[key].value, className: options[key].className },
+                            options[key].callback,
+                        ),
                     ),
                 )
             } else {
@@ -250,11 +253,10 @@ void (function () {
                 queryBodyCls: ".modal-wrap-mobile.folding",
                 options: {
                     feedback: {
-                        value: isChinese() ? "问题反馈" : "Feedback",
-                        callback: () =>
-                            window.open("https://github.com/netless-io/flat/issues", "_blank"),
-                    }
-                }
+                        value: "Email：flat@agora.io",
+                        className: "modal-feedback-static",
+                    },
+                },
             },
             lang: {
                 desktopTargetId: "#lang",

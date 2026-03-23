@@ -58,10 +58,24 @@ export function macDownloadBody() {
             </div>`;
 }
 
-export function generateModalItem({ value }, callback) {
+export function generateModalItem({ value, className }, callback) {
     const p = document.createElement("p")
     p.innerHTML = value
-    p.on("click", callback)
+    if (className) {
+        p.classList.add(className)
+    }
+    if (className === "modal-feedback-static") {
+        p.on(
+            "click",
+            e => {
+                e.preventDefault()
+                e.stopPropagation()
+            },
+            true,
+        )
+    } else if (typeof callback === "function") {
+        p.on("click", callback)
+    }
     return p
 }
 

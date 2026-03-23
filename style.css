@@ -195,10 +195,33 @@ p {
     border-radius: 0;
 }
 
+.nav-feedback-wrap {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.nav-feedback-wrap .nav-feedback-label {
+    cursor: default;
+    user-select: none;
+}
+
+.nav-feedback-wrap .try-btn-qrcode {
+    top: 100%;
+    bottom: auto;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
 .try-btn-wrap:hover .try-btn-qrcode,
-.download-list-item:hover .try-btn-qrcode {
+.download-list-item:hover .try-btn-qrcode,
+.nav-feedback-wrap:hover .try-btn-qrcode {
     opacity: 1;
     visibility: visible;
+    /* 避免悬停时二维码区域点击穿透到下层链接（如 GitHub） */
+    pointer-events: auto;
 }
 
 .navheader .try-btn,
@@ -493,6 +516,11 @@ p {
 
     .modal-wrap-mobile p.active {
         color: var(--primary-color, #099dfd);
+    }
+
+    .modal-wrap-mobile.folding p.modal-feedback-static {
+        cursor: default;
+        user-select: none;
     }
 
     .modal-wrap-mobile {
