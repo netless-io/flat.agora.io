@@ -58,6 +58,10 @@ p {
 
 /*===========================================================================*/
 
+.github-cta-hidden {
+    display: none !important;
+}
+
 .flex { display: flex; }
 
 .flex-align-center { align-items: center; }
@@ -189,9 +193,9 @@ p {
 
 .try-btn-qrcode img {
     display: block;
-    width: 96px;
+    width: 160px;
     height: auto;
-    max-width: min(96px, 40vw);
+    max-width: min(160px, 70vw);
     border-radius: 0;
 }
 
