@@ -4,7 +4,6 @@ import {
     getCurrentLanguage,
     generateModalItem,
     addModal,
-    macDownloadBody
 } from "./utils/index.js"
 
 void (function () {
@@ -233,27 +232,6 @@ void (function () {
         })
     }
 
-    function initMacDownloadModal() {
-        const { target, closeCls, id, bodyCls, queryBodyCls } = $CONFIG.download
-
-        $(target).on("click", e => {
-            foldingCallback()
-            e.stopPropagation()
-        })
-
-        function foldingCallback() {
-            if (!$(id)) {
-                addModal({ id: id.substring(1), bodyCls }, "desktop")
-
-                const foldingModalBody = $(queryBodyCls)
-                foldingModalBody.innerHTML = macDownloadBody()
-                $(closeCls)?.on("click", foldingCallback)
-            } else {
-                document.body.removeChild($(id))
-            }
-        }
-    }
-
     function comingSoon() {
         $$(".download-list a").forEach(a => a.on("click", (e) => {
             if (!a.href) {
@@ -297,13 +275,6 @@ void (function () {
             tab: {
                 intervals: [4000, 5000, 6000]
             },
-            download: {
-                id: "#download-modal",
-                target: "#mac-download",
-                bodyCls: "download",
-                queryBodyCls: ".modal-wrap.download",
-                closeCls: ".modal-close-btn",
-            },
             cover: {
                 cls: ".cover",
                 maxRotation: 1 // adjust this value to change the rotation effect
@@ -322,7 +293,6 @@ void (function () {
 
         initComment() // set comments
         initTabSwitch() // set carousel item event
-        initMacDownloadModal() // set mac download modal
         initFolding() // set folding
         // setLanguageSwitch() // set language
         setCoverAnimation() // set header cover press effect
